@@ -2,17 +2,50 @@
 
 Instructions for Claude Code when working with this project.
 
+## Session Persistence Rules
+
+**IMPORTANT**: Follow these rules to prevent losing work across sessions:
+
+1. **Save strategic decisions to memory** - Use `mcp__memory__add_observations` for status updates
+2. **Update STRATEGY.md** - All plans and phase progress go in this file
+3. **Commit changes before ending sessions** - Don't leave uncommitted work
+4. **Update this status section** - Keep current phase accurate
+
+**Memory entities for this project:**
+- `DomainPortfolioProject` - Project overview
+- `DomainPortfolioStatus` - Current status and completed tasks
+- `DomainPortfolioStrategy` - Strategic plan summary
+
+**Quick checkpoint command:** "Save current progress to memory and commit"
+
+---
+
 ## Project Overview
 
-This is a domain portfolio with 9 custom landing pages deployed to Cloudflare Pages, plus 6 redirect domains. The goal is to increase domain resale value through professional web presence.
+This is a domain portfolio with 9 custom landing pages deployed to Cloudflare Pages, plus 6 redirect domains. The goal is to increase domain resale value from **$12,817 to $35,000-51,500**.
+
+**Full Strategic Plan:** See [STRATEGY.md](STRATEGY.md)
 
 ## Current Status (2025-12-19)
 
-**Deployment: COMPLETE**
+| Phase | Status |
+|-------|--------|
+| Phase 1: Foundation | COMPLETE |
+| Phase 2: SEO & Indexing | IN PROGRESS |
+| Phase 3: Marketplace Listing | PENDING |
+| Phase 4: Pricing Strategy | PENDING |
+| Phase 5: Active Marketing | PENDING |
+| Phase 6: Ongoing Management | PENDING |
 
+**Completed:**
 - 9 landing pages live on Cloudflare Pages
 - 6 redirect rules active (301 permanent)
 - All DNS configured and propagated
+- Google Search Console verified (8 domains)
+
+**Next Steps:**
+- Create and submit sitemaps
+- List on Afternic, Dan.com, Sedo
 
 ## Cloudflare Configuration
 
