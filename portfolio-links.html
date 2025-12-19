@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Portfolio Links</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 300;
+            font-size: 2rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 40px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .card {
+            background: #252542;
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+        .card .category {
+            font-size: 0.75rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .card .value {
+            font-size: 0.85rem;
+            color: #6c6;
+            margin-bottom: 16px;
+        }
+        .card a {
+            display: inline-block;
+            background: #4a4a7a;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .card a:hover { background: #5a5a9a; }
+        .personal { border-left: 3px solid #f90; }
+        .personal .category { color: #f90; }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Domain Portfolio</h1>
+        <p class="subtitle">9 Landing Pages on Cloudflare Pages</p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>royalsmartpeople.com</h3>
+                <div class="category">EdTech</div>
+                <div class="value">$2,770 → $8,000-12,000</div>
+                <a href="https://royalsmartpeople.com" target="_blank">View Site</a>
+            </div>
+
+            <div class="card">
+                <h3>g3dx.com</h3>
+                <div class="category">Tech / Gaming</div>
+                <div class="value">$2,188 → $6,000-8,000</div>
+                <a href="https://g3dx.com" target="_blank">View Site</a>
+            </div>
+
+            <div class="card">
+                <h3>aftermathematics.com</h3>
+                <div class="category">EdTech</div>
+                <div class="value">$1,701 → $5,000-7,000</div>
+                <a href="https://aftermathematics.com" target="_blank">View Site</a>
+            </div>
+
+            <div class="card">
+                <h3>projecth3lp.com</h3>
+                <div class="category">Nonprofit / Tech</div>
+                <div class="value">$1,494 → $4,500-6,000</div>
+                <a href="https://projecth3lp.com" target="_blank">View Site</a>
+            </div>
+
+            <div class="card">
+                <h3>guthed.com</h3>
+                <div class="category">Creative</div>
+                <div class="value">$1,276 → $3,500-5,000</div>
+                <a href="https://guthed.com" target="_blank">View Site</a>
+            </div>
+
+            <div class="card">
+                <h3>deadcowcreek.com</h3>
+                <div class="category">Ranch / Western</div>
+                <div class="value">$1,007 → $3,000-4,500</div>
+                <a href="https://deadcowcreek.com" target="_blank">View Site</a>
+            </div>
+
+            <div class="card">
+                <h3>inertialism.com</h3>
+                <div class="category">Philosophy</div>
+                <div class="value">$714 → $2,500-4,000</div>
+                <a href="https://inertialism.com" target="_blank">View Site</a>
+            </div>
+
+            <div class="card">
+                <h3>doctorswithinborders.org</h3>
+                <div class="category">Healthcare</div>
+                <div class="value">$137 → $2,500-4,000</div>
+                <a href="https://doctorswithinborders.com" target="_blank">View Site</a>
+            </div>
+
+            <div class="card personal">
+                <h3>ohitika.org</h3>
+                <div class="category">Personal Holdback</div>
+                <div class="value">Lakota Language & Culture</div>
+                <a href="https://ohitika.org" target="_blank">View Site</a>
+            </div>
+        </div>
+
+        <p class="footer">Portfolio Value: $12,817 → Target $35,000-51,500</p>
+    </div>
+</body>
+</html>
