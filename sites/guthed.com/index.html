@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUTHED | Creative Studio</title>
+    <meta name="description" content="GUTHED is a creative studio that builds bold brands and unforgettable digital experiences. We don't follow trends - we set them.">
+    <meta name="keywords" content="creative agency, brand design, digital experiences, creative studio">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="GUTHED | Creative Studio">
+    <meta property="og:description" content="We build bold brands and unforgettable digital experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://guthed.com">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --gray: #666666;
+            --silver: #999999;
+            --white: #ffffff;
+            --cream: #f5f5f0;
+            --accent: #ff3d00;
+            --accent-dark: #cc3100;
+            --accent-glow: rgba(255, 61, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            cursor: default;
+        }
+
+        /* Custom cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease, opacity 0.3s ease;
+            mix-blend-mode: difference;
+        }
+
+        .cursor.hover {
+            transform: scale(2);
+            background: var(--accent);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            mix-blend-mode: difference;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 50%, var(--accent-glow) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(255, 61, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(4rem, 15vw, 12rem);
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 span {
+            display: block;
+            animation: slideIn 1s ease-out backwards;
+        }
+
+        .hero h1 span:nth-child(1) { animation-delay: 0.2s; }
+        .hero h1 span:nth-child(2) { animation-delay: 0.4s; color: var(--accent); }
+        .hero h1 span:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(100px) skewY(5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) skewY(0);
+            }
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: var(--silver);
+            max-width: 500px;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-out 0.8s backwards;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 2.5rem;
+            background: var(--accent);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-out 1s backwards;
+        }
+
+        .hero-cta:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .hero-cta svg {
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta:hover svg {
+            transform: translateX(5px);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 4rem;
+            left: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gray);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--accent) 0%, transparent 100%);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; height: 60px; }
+            50% { opacity: 1; height: 80px; }
+        }
+
+        /* Work Section */
+        .work {
+            padding: 8rem 4rem;
+            background: var(--charcoal);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1;
+        }
+
+        .section-count {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: var(--gray);
+            opacity: 0.3;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .work-item {
+            position: relative;
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            background: var(--black);
+        }
+
+        .work-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .work-item:hover::before {
+            opacity: 1;
+        }
+
+        .work-preview {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: var(--gray);
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .work-item:hover .work-preview {
+            transform: scale(1.05);
+            filter: brightness(0.7);
+        }
+
+        .work-item:nth-child(1) .work-preview { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+        .work-item:nth-child(2) .work-preview { background: linear-gradient(135deg, #2d132c 0%, #801336 100%); }
+        .work-item:nth-child(3) .work-preview { background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%); }
+        .work-item:nth-child(4) .work-preview { background: linear-gradient(135deg, #3d0c02 0%, #780000 100%); }
+
+        .work-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            z-index: 2;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .work-item:hover .work-info {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .work-info h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .work-info p {
+            color: var(--silver);
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 4rem;
+            background: var(--black);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border: 1px solid var(--charcoal);
+        }
+
+        .service-item {
+            padding: 3rem;
+            border: 1px solid var(--charcoal);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            z-index: 0;
+        }
+
+        .service-item:hover::before {
+            transform: translateY(0);
+        }
+
+        .service-item > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            transition: color 0.4s ease;
+        }
+
+        .service-item:hover .service-number {
+            color: rgba(255,255,255,0.3);
+        }
+
+        .service-item h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            transition: color 0.4s ease;
+        }
+
+        .service-item p {
+            color: var(--silver);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            transition: color 0.4s ease;
+        }
+
+        .service-item:hover p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 4rem;
+            background: var(--cream);
+            color: var(--black);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        .about-text h2 span {
+            color: var(--accent);
+        }
+
+        .about-text p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 4px;
+        }
+
+        .stat-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            padding: 12rem 4rem;
+            background: var(--black);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-cta::before {
+            content: 'LET\'S TALK';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 25vw;
+            color: var(--charcoal);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .contact-cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-cta p {
+            color: var(--silver);
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 3rem;
+            background: var(--accent);
+            color: var(--white);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-btn:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            padding: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            letter-spacing: 0.1em;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--silver);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--silver);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero,
+            .work,
+            .services,
+            .about,
+            .contact-cta {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .cursor {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom cursor -->
+    <div class="cursor"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">GUTHED</a>
+        <ul class="nav-links">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="hero-label">Creative Studio</p>
+            <h1>
+                <span>WE BUILD</span>
+                <span>BOLD</span>
+                <span>BRANDS</span>
+            </h1>
+            <p class="hero-tagline">
+                Guthed is a creative studio for brands that refuse to blend in. We craft digital experiences that demand attention.
+            </p>
+            <a href="#work" class="hero-cta">
+                <span>View Our Work</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="work" id="work">
+        <div class="section-header">
+            <h2 class="section-title">Selected Work</h2>
+            <span class="section-count">04</span>
+        </div>
+
+        <div class="work-grid">
+            <div class="work-item">
+                <div class="work-preview">01</div>
+                <div class="work-info">
+                    <h3>Brand Identity</h3>
+                    <p>Visual Systems & Strategy</p>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-preview">02</div>
+                <div class="work-info">
+                    <h3>Digital Experience</h3>
+                    <p>Web Design & Development</p>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-preview">03</div>
+                <div class="work-info">
+                    <h3>Motion Design</h3>
+                    <p>Animation & Video</p>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-preview">04</div>
+                <div class="work-info">
+                    <h3>Campaign</h3>
+                    <p>Creative Direction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2 class="section-title">What We Do</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-number">01</div>
+                <h3>Brand Strategy</h3>
+                <p>We dig deep to understand what makes you different, then build a brand foundation that stands the test of time.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-number">02</div>
+                <h3>Visual Identity</h3>
+                <p>Logos, color systems, typography, and visual language that captures your essence and commands attention.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-number">03</div>
+                <h3>Web Design</h3>
+                <p>Digital experiences that convert visitors into believers. Every pixel intentional, every interaction memorable.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-number">04</div>
+                <h3>Development</h3>
+                <p>Clean code that brings designs to life. Fast, responsive, and built to scale with your ambitions.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-number">05</div>
+                <h3>Motion Design</h3>
+                <p>Movement that tells stories. From micro-interactions to full campaign videos that stop the scroll.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-number">06</div>
+                <h3>Art Direction</h3>
+                <p>Creative vision for campaigns, photoshoots, and content that makes your brand unforgettable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>WE DON'T DO <span>BORING</span></h2>
+                <p>Guthed was founded on a simple belief: the world has enough bland brands. We're here for the bold ones - the disruptors, the challengers, the ones who'd rather be remembered than safe.</p>
+                <p>Our work isn't about following trends. It's about creating them. We partner with brands that share our obsession with craft and our allergy to mediocrity.</p>
+            </div>
+
+            <div class="about-stats">
+                <div class="stat">
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Years</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">15</div>
+                    <div class="stat-label">Awards</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Bold</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta" id="contact">
+        <h2>GOT A PROJECT?</h2>
+        <p>Let's create something people will remember.</p>
+        <a href="mailto:hello@guthed.com" class="contact-btn">
+            <span>START A PROJECT</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">GUTHED</div>
+            <ul class="footer-links">
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Dribbble">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.374 0 0 5.374 0 12s5.374 12 12 12 12-5.374 12-12S18.626 0 12 0zm8.166 5.534a10.162 10.162 0 012.003 5.408c-.29-.057-3.206-.65-6.143-.28-.066-.143-.123-.29-.19-.437a25.088 25.088 0 00-.658-1.45c3.262-1.333 4.742-3.238 4.988-3.241zM12 1.828c2.397 0 4.592.882 6.277 2.336-.191.274-1.527 1.788-4.616 2.948-1.442-2.646-3.043-4.82-3.284-5.135A10.19 10.19 0 0112 1.828zM8.419 2.59c.228.305 1.793 2.49 3.26 5.053-4.11 1.091-7.735 1.073-8.122 1.068a10.244 10.244 0 014.862-6.12zm-5.12 9.322c0-.117.004-.233.008-.35.375.008 4.692.07 9.08-1.245.253.493.497.995.724 1.496-.104.03-.207.063-.31.097-4.605 1.486-7.05 5.543-7.299 5.967a10.182 10.182 0 01-2.203-5.965zM12 22.172a10.137 10.137 0 01-6.246-2.143c.196-.41 2.009-3.854 7.023-5.62l.064-.02c1.254 3.258 1.771 5.993 1.908 6.76A10.151 10.151 0 0112 22.172zm3.615-1.087c-.096-.539-.553-3.13-1.715-6.33 2.808-.45 5.267.285 5.58.381a10.18 10.18 0 01-3.865 5.949z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GUTHED. All rights reserved. | We don't do boring.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        let mouseX = 0, mouseY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animate() {
+            cursor.style.left = mouseX - 10 + 'px';
+            cursor.style.top = mouseY - 10 + 'px';
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Cursor hover effect
+        const hoverElements = document.querySelectorAll('a, button, .work-item');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.work-item, .service-item, .stat').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

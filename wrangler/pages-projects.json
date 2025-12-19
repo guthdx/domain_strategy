@@ -1,0 +1,113 @@
+{
+  "projects": [
+    {
+      "name": "royalsmartpeople",
+      "directory": "sites/royalsmartpeople.com",
+      "customDomains": ["royalsmartpeople.com", "www.royalsmartpeople.com"],
+      "productionBranch": "main",
+      "buildCommand": null,
+      "buildOutputDirectory": "/"
+    },
+    {
+      "name": "g3dx",
+      "directory": "sites/g3dx.com",
+      "customDomains": ["g3dx.com", "www.g3dx.com"],
+      "productionBranch": "main",
+      "buildCommand": null,
+      "buildOutputDirectory": "/"
+    },
+    {
+      "name": "aftermathematics",
+      "directory": "sites/aftermathematics.com",
+      "customDomains": ["aftermathematics.com", "www.aftermathematics.com"],
+      "productionBranch": "main",
+      "buildCommand": null,
+      "buildOutputDirectory": "/"
+    },
+    {
+      "name": "projecth3lp",
+      "directory": "sites/projecth3lp.com",
+      "customDomains": ["projecth3lp.com", "www.projecth3lp.com"],
+      "productionBranch": "main",
+      "buildCommand": null,
+      "buildOutputDirectory": "/"
+    },
+    {
+      "name": "guthed",
+      "directory": "sites/guthed.com",
+      "customDomains": ["guthed.com", "www.guthed.com"],
+      "productionBranch": "main",
+      "buildCommand": null,
+      "buildOutputDirectory": "/"
+    },
+    {
+      "name": "deadcowcreek",
+      "directory": "sites/deadcowcreek.com",
+      "customDomains": ["deadcowcreek.com", "www.deadcowcreek.com"],
+      "productionBranch": "main",
+      "buildCommand": null,
+      "buildOutputDirectory": "/"
+    },
+    {
+      "name": "inertialism",
+      "directory": "sites/inertialism.com",
+      "customDomains": ["inertialism.com", "www.inertialism.com"],
+      "productionBranch": "main",
+      "buildCommand": null,
+      "buildOutputDirectory": "/"
+    },
+    {
+      "name": "doctorswithinborders",
+      "directory": "sites/doctorswithinborders.org",
+      "customDomains": ["doctorswithinborders.org", "www.doctorswithinborders.org"],
+      "productionBranch": "main",
+      "buildCommand": null,
+      "buildOutputDirectory": "/"
+    },
+    {
+      "name": "ohitika",
+      "directory": "sites/ohitika.org",
+      "customDomains": ["ohitika.org", "www.ohitika.org"],
+      "productionBranch": "main",
+      "buildCommand": null,
+      "buildOutputDirectory": "/"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "g3dx.org",
+      "target": "https://g3dx.com",
+      "statusCode": 301
+    },
+    {
+      "source": "royalsmartpeople.org",
+      "target": "https://royalsmartpeople.com",
+      "statusCode": 301
+    },
+    {
+      "source": "royalsmartpeople.net",
+      "target": "https://royalsmartpeople.com",
+      "statusCode": 301
+    },
+    {
+      "source": "royalsmartpeople.info",
+      "target": "https://royalsmartpeople.com",
+      "statusCode": 301
+    },
+    {
+      "source": "aftermathematics.org",
+      "target": "https://aftermathematics.com",
+      "statusCode": 301
+    },
+    {
+      "source": "projecth3lp.net",
+      "target": "https://projecth3lp.com",
+      "statusCode": 301
+    },
+    {
+      "source": "ohitika.net",
+      "target": "https://ohitika.org",
+      "statusCode": 301
+    }
+  ]
+}

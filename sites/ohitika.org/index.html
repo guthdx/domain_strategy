@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohitika - Brave | Lakota Language & Culture</title>
+    <meta name="description" content="Ohitika means 'Brave' in Lakota. Explore the beauty of the Lakota language, preserve cultural heritage, and join a community dedicated to language revitalization.">
+    <meta name="keywords" content="Lakota language, Lakota culture, indigenous language, language preservation, Native American, Sioux, ohitika, brave">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ohitika - Brave | Lakota Language & Culture">
+    <meta property="og:description" content="Ohitika means 'Brave' in Lakota. Explore the beauty of the Lakota language and join our language revitalization community.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ohitika.org">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Earth & Sky Palette - Inspired by the Great Plains */
+            --earth-deep: #2C1810;
+            --earth-brown: #5D3A2D;
+            --clay-red: #A0522D;
+            --sunset-orange: #D4763A;
+            --prairie-gold: #C9A857;
+            --sage-green: #7A8B6E;
+            --sky-light: #87CEEB;
+            --sky-twilight: #4A6FA5;
+            --night-sky: #1A2744;
+            --cream: #FDF6E9;
+            --warm-white: #FFFBF5;
+
+            /* Semantic colors */
+            --text-primary: var(--earth-deep);
+            --text-secondary: var(--earth-brown);
+            --accent: var(--clay-red);
+            --accent-light: var(--sunset-orange);
+            --background: var(--warm-white);
+            --surface: var(--cream);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito Sans', -apple-system, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Geometric Pattern Background - Inspired by traditional quillwork */
+        .pattern-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.03;
+            background-image:
+                linear-gradient(45deg, var(--clay-red) 25%, transparent 25%),
+                linear-gradient(-45deg, var(--clay-red) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, var(--clay-red) 75%),
+                linear-gradient(-45deg, transparent 75%, var(--clay-red) 75%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 0, 30px -30px, 0 30px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(253, 246, 233, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(44, 24, 16, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-symbol {
+            width: 45px;
+            height: 45px;
+            position: relative;
+        }
+
+        /* Four Directions Symbol - Respectful geometric representation */
+        .logo-symbol svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text strong {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--clay-red);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--clay-red);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+            background: linear-gradient(
+                180deg,
+                var(--warm-white) 0%,
+                var(--cream) 50%,
+                rgba(74, 111, 165, 0.1) 100%
+            );
+        }
+
+        /* Horizon Line - Symbolic of the Great Plains */
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                var(--prairie-gold) 20%,
+                var(--sunset-orange) 50%,
+                var(--prairie-gold) 80%,
+                transparent 100%
+            );
+            opacity: 0.4;
+        }
+
+        .hero-lakota {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(4rem, 12vw, 9rem);
+            font-weight: 700;
+            color: var(--earth-deep);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-english {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--clay-red);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.2s forwards;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--clay-red);
+            color: white;
+            border: 2px solid var(--clay-red);
+        }
+
+        .btn-primary:hover {
+            background: var(--earth-brown);
+            border-color: var(--earth-brown);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(160, 82, 45, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--earth-brown);
+        }
+
+        .btn-secondary:hover {
+            background: var(--earth-brown);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeInUp 1s ease 1s forwards, bounce 2s ease infinite 1.5s;
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--clay-red);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 5%;
+            background: var(--cream);
+            position: relative;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--earth-deep);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text h2 span {
+            color: var(--clay-red);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        /* Four Directions Circle */
+        .directions-circle {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%);
+            box-shadow:
+                0 20px 60px rgba(44, 24, 16, 0.1),
+                inset 0 0 60px rgba(201, 168, 87, 0.1);
+        }
+
+        .direction {
+            position: absolute;
+            text-align: center;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .direction-lakota {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--earth-deep);
+        }
+
+        .direction-english {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .direction.north {
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .direction.east {
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .direction.south {
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .direction.west {
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .center-symbol {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+        }
+
+        /* Language Section */
+        .language {
+            padding: 8rem 5%;
+            background: var(--warm-white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--earth-deep);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .words-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .word-card {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 24, 16, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .word-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--clay-red);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .word-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(44, 24, 16, 0.1);
+        }
+
+        .word-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .word-lakota {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--earth-deep);
+            margin-bottom: 0.5rem;
+        }
+
+        .word-pronunciation {
+            font-size: 0.9rem;
+            color: var(--clay-red);
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .word-english {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .word-context {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 8rem 5%;
+            background: var(--night-sky);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Stars effect */
+        .mission::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, white, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, white, transparent),
+                radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 160px 120px, white, transparent);
+            background-size: 200px 150px;
+            opacity: 0.4;
+            animation: twinkle 5s ease infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.6; }
+        }
+
+        .mission-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+        }
+
+        .mission-quote {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            color: var(--prairie-gold);
+        }
+
+        .mission-attribution {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+        }
+
+        .mission p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sunset-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Learn Section */
+        .learn {
+            padding: 8rem 5%;
+            background: var(--warm-white);
+        }
+
+        .learn-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .learn-card {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 24, 16, 0.05);
+        }
+
+        .learn-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(44, 24, 16, 0.12);
+        }
+
+        .learn-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--clay-red), var(--sunset-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .learn-icon svg {
+            width: 35px;
+            height: 35px;
+            stroke: white;
+        }
+
+        .learn-card h3 {
+            font-size: 1.4rem;
+            color: var(--earth-deep);
+            margin-bottom: 1rem;
+        }
+
+        .learn-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Blog/Resources Section */
+        .resources {
+            padding: 8rem 5%;
+            background: var(--cream);
+        }
+
+        .articles-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .article-card {
+            background: var(--warm-white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 24, 16, 0.05);
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(44, 24, 16, 0.1);
+        }
+
+        .article-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--sky-twilight), var(--night-sky));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+        }
+
+        .article-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--clay-red);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            color: var(--earth-deep);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .article-link {
+            color: var(--clay-red);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .article-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, var(--earth-brown) 0%, var(--earth-deep) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .cta .btn-primary {
+            background: var(--prairie-gold);
+            color: var(--earth-deep);
+            border-color: var(--prairie-gold);
+        }
+
+        .cta .btn-primary:hover {
+            background: white;
+            border-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 5% 2rem;
+            background: var(--earth-deep);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand .logo-text strong {
+            color: white;
+        }
+
+        .footer-brand .logo-text span {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--prairie-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 7rem 5% 4rem;
+            }
+
+            .mission-stats {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* Animations on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="pattern-bg"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">
+            <div class="logo-symbol">
+                <svg viewBox="0 0 45 45" fill="none">
+                    <!-- Four Directions Symbol -->
+                    <circle cx="22.5" cy="22.5" r="21" stroke="#A0522D" stroke-width="1.5" fill="none"/>
+                    <circle cx="22.5" cy="22.5" r="8" fill="#A0522D"/>
+                    <!-- Four directions lines -->
+                    <line x1="22.5" y1="1.5" x2="22.5" y2="14.5" stroke="#A0522D" stroke-width="2"/>
+                    <line x1="22.5" y1="30.5" x2="22.5" y2="43.5" stroke="#A0522D" stroke-width="2"/>
+                    <line x1="1.5" y1="22.5" x2="14.5" y2="22.5" stroke="#A0522D" stroke-width="2"/>
+                    <line x1="30.5" y1="22.5" x2="43.5" y2="22.5" stroke="#A0522D" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <strong>Ohitika</strong>
+                <span>Brave</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#language">Language</a></li>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#learn">Learn</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-lakota">Ohitika</h1>
+        <p class="hero-english">Brave</p>
+        <p class="hero-description">
+            Explore the beauty, depth, and wisdom of the Lakota language.
+            Join us in preserving and revitalizing one of North America's most
+            important indigenous languages for future generations.
+        </p>
+        <div class="hero-cta">
+            <a href="#learn" class="btn btn-primary">Start Learning</a>
+            <a href="#mission" class="btn btn-secondary">Our Mission</a>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-text reveal">
+                <h2>The <span>Living</span> Language</h2>
+                <p>
+                    Lakota (Lakȟótiyapi) is a Siouan language spoken by the Lakota people
+                    of the Sioux tribes. It is one of three closely related dialects that
+                    together form the Sioux language, alongside Dakota and Nakota.
+                </p>
+                <p>
+                    Today, fewer than 2,000 fluent speakers remain, making language
+                    preservation critically important. Each word carries generations of
+                    wisdom, history, and a unique worldview shaped by life on the
+                    Northern Great Plains.
+                </p>
+                <p>
+                    At Ohitika, we believe that preserving language means preserving
+                    identity, culture, and a way of understanding the world that enriches
+                    all of humanity.
+                </p>
+            </div>
+            <div class="about-visual reveal">
+                <div class="directions-circle">
+                    <div class="direction north">
+                        <div class="direction-lakota">Wazíyata</div>
+                        <div class="direction-english">North</div>
+                    </div>
+                    <div class="direction east">
+                        <div class="direction-lakota">Wiyóhiyaŋpata</div>
+                        <div class="direction-english">East</div>
+                    </div>
+                    <div class="direction south">
+                        <div class="direction-lakota">Itókaga</div>
+                        <div class="direction-english">South</div>
+                    </div>
+                    <div class="direction west">
+                        <div class="direction-lakota">Wiyóȟpeyata</div>
+                        <div class="direction-english">West</div>
+                    </div>
+                    <div class="center-symbol">
+                        <svg viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="30" fill="#A0522D" opacity="0.1"/>
+                            <circle cx="60" cy="60" r="20" fill="#A0522D" opacity="0.2"/>
+                            <circle cx="60" cy="60" r="10" fill="#A0522D"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Section -->
+    <section id="language" class="language">
+        <div class="section-header reveal">
+            <h2>Words of Wisdom</h2>
+            <p>
+                Each Lakota word carries deep meaning, reflecting a worldview
+                rooted in relationship with the land, community, and spirit.
+            </p>
+        </div>
+        <div class="words-grid">
+            <div class="word-card reveal">
+                <div class="word-lakota">Mitákuye Oyás'iŋ</div>
+                <div class="word-pronunciation">/mi-TAH-koo-yay oh-YAH-see/</div>
+                <div class="word-english">"All Are Related"</div>
+                <p class="word-context">
+                    A prayer and worldview expressing the interconnectedness of all
+                    living things. Used in ceremony and daily life as a reminder of
+                    our responsibility to all creation.
+                </p>
+            </div>
+            <div class="word-card reveal">
+                <div class="word-lakota">Wičhóȟ'aŋ</div>
+                <div class="word-pronunciation">/wee-CHO-hah/</div>
+                <div class="word-english">"Way of Life"</div>
+                <p class="word-context">
+                    More than just customs or traditions, this encompasses the entire
+                    Lakota philosophy of living in harmony with natural law and
+                    community values.
+                </p>
+            </div>
+            <div class="word-card reveal">
+                <div class="word-lakota">Waúŋšila</div>
+                <div class="word-pronunciation">/wah-OON-shee-lah/</div>
+                <div class="word-english">"Compassion"</div>
+                <p class="word-context">
+                    A core Lakota value expressing mercy, pity, and deep compassion
+                    for others. One of the four cardinal virtues guiding Lakota life.
+                </p>
+            </div>
+            <div class="word-card reveal">
+                <div class="word-lakota">Wóksape</div>
+                <div class="word-pronunciation">/WOH-ksha-pay/</div>
+                <div class="word-english">"Wisdom"</div>
+                <p class="word-context">
+                    Knowledge gained through experience, observation, and the teachings
+                    of elders. Essential for leadership and living a good life.
+                </p>
+            </div>
+            <div class="word-card reveal">
+                <div class="word-lakota">Wičháȟpi</div>
+                <div class="word-pronunciation">/wee-CHAH-pee/</div>
+                <div class="word-english">"Star"</div>
+                <p class="word-context">
+                    Stars hold deep significance in Lakota cosmology. The Pleiades
+                    (Čhaŋpȟásapa Wakȟáŋ) guide seasonal ceremonies and connect the
+                    people to their origin stories.
+                </p>
+            </div>
+            <div class="word-card reveal">
+                <div class="word-lakota">Tȟuŋkášila</div>
+                <div class="word-pronunciation">/toon-KAH-shee-lah/</div>
+                <div class="word-english">"Grandfather"</div>
+                <p class="word-context">
+                    A term of deep respect used for elders and also as a name for
+                    the Creator. Reflects the Lakota understanding of the sacred
+                    masculine and ancestral connection.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission">
+        <div class="mission-content">
+            <h2 class="reveal">Preserving Tomorrow</h2>
+            <blockquote class="mission-quote reveal">
+                "The Lakota language is not just words. It is a way of thinking,
+                a way of understanding the world, a way of being human."
+            </blockquote>
+            <p class="mission-attribution reveal">— Lakota Elder Teaching</p>
+            <p class="reveal">
+                Language carries the accumulated wisdom of generations. When a language
+                dies, we lose not just vocabulary, but unique ways of understanding
+                relationships, nature, spirituality, and what it means to be human.
+            </p>
+            <p class="reveal">
+                Our mission is to create accessible resources for Lakota language learners,
+                support fluent speakers in passing on their knowledge, and build bridges
+                between traditional wisdom and modern technology.
+            </p>
+            <div class="mission-stats reveal">
+                <div class="stat">
+                    <div class="stat-number">&lt;2,000</div>
+                    <div class="stat-label">Fluent Speakers Remaining</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Reservations Preserving Lakota</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">170+</div>
+                    <div class="stat-label">Years of Written Lakota</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learn Section -->
+    <section id="learn" class="learn">
+        <div class="section-header reveal">
+            <h2>Begin Your Journey</h2>
+            <p>
+                Learning Lakota opens doors to a rich culture and unique worldview.
+                Start with these foundational areas.
+            </p>
+        </div>
+        <div class="learn-grid">
+            <div class="learn-card reveal">
+                <div class="learn-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3>Pronunciation Guide</h3>
+                <p>
+                    Master the unique sounds of Lakota, including the distinctive
+                    aspirated consonants, glottal stops, and nasal vowels that give
+                    the language its characteristic sound.
+                </p>
+            </div>
+            <div class="learn-card reveal">
+                <div class="learn-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                    </svg>
+                </div>
+                <h3>Essential Vocabulary</h3>
+                <p>
+                    Build your foundation with core words for family, nature, emotions,
+                    and daily life. Each word opens a window into Lakota culture and
+                    understanding.
+                </p>
+            </div>
+            <div class="learn-card reveal">
+                <div class="learn-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3>Verb Conjugation</h3>
+                <p>
+                    Lakota verbs are the heart of the language, encoding not just
+                    action but relationships between speaker, subject, and object.
+                    Learn the elegant system of affixes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources/Blog Section -->
+    <section id="resources" class="resources">
+        <div class="section-header reveal">
+            <h2>Learn & Explore</h2>
+            <p>
+                Deepen your understanding with articles, stories, and resources
+                for language learners at all levels.
+            </p>
+        </div>
+        <div class="articles-grid">
+            <article class="article-card reveal">
+                <div class="article-image">
+                    <span class="article-tag">Language</span>
+                </div>
+                <div class="article-content">
+                    <h3 class="article-title">Understanding Lakota Verb Classes</h3>
+                    <p class="article-excerpt">
+                        A comprehensive guide to the three verb classes in Lakota and
+                        how they determine conjugation patterns and meaning.
+                    </p>
+                    <a href="#" class="article-link">
+                        Read More <span>→</span>
+                    </a>
+                </div>
+            </article>
+            <article class="article-card reveal">
+                <div class="article-image">
+                    <span class="article-tag">Culture</span>
+                </div>
+                <div class="article-content">
+                    <h3 class="article-title">The Seven Lakota Values</h3>
+                    <p class="article-excerpt">
+                        Explore the Wóčhekiye - the seven core values that guide
+                        traditional Lakota life and community relationships.
+                    </p>
+                    <a href="#" class="article-link">
+                        Read More <span>→</span>
+                    </a>
+                </div>
+            </article>
+            <article class="article-card reveal">
+                <div class="article-image">
+                    <span class="article-tag">History</span>
+                </div>
+                <div class="article-content">
+                    <h3 class="article-title">Lakota Star Knowledge</h3>
+                    <p class="article-excerpt">
+                        How the Lakota people mapped their world through the stars
+                        and used celestial knowledge to guide ceremonies and seasons.
+                    </p>
+                    <a href="#" class="article-link">
+                        Read More <span>→</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content reveal">
+            <h2>Be Ohitika. Be Brave.</h2>
+            <p>
+                Learning a new language takes courage. Preserving a language takes
+                community. Join us in keeping Lakota alive for generations to come.
+            </p>
+            <a href="#learn" class="btn btn-primary">Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <div class="logo-symbol">
+                        <svg viewBox="0 0 45 45" fill="none">
+                            <circle cx="22.5" cy="22.5" r="21" stroke="#C9A857" stroke-width="1.5" fill="none"/>
+                            <circle cx="22.5" cy="22.5" r="8" fill="#C9A857"/>
+                            <line x1="22.5" y1="1.5" x2="22.5" y2="14.5" stroke="#C9A857" stroke-width="2"/>
+                            <line x1="22.5" y1="30.5" x2="22.5" y2="43.5" stroke="#C9A857" stroke-width="2"/>
+                            <line x1="1.5" y1="22.5" x2="14.5" y2="22.5" stroke="#C9A857" stroke-width="2"/>
+                            <line x1="30.5" y1="22.5" x2="43.5" y2="22.5" stroke="#C9A857" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <strong>Ohitika</strong>
+                        <span>Brave</span>
+                    </div>
+                </a>
+                <p>
+                    Dedicated to the preservation and revitalization of the
+                    Lakota language and culture for future generations.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Learn</h4>
+                <ul>
+                    <li><a href="#language">Vocabulary</a></li>
+                    <li><a href="#learn">Pronunciation</a></li>
+                    <li><a href="#learn">Grammar</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#mission">Our Mission</a></li>
+                    <li><a href="#about">The Language</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Support Us</a></li>
+                    <li><a href="#">Partners</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ohitika.org. All rights reserved.</p>
+            <p>Mitákuye Oyás'iŋ — We Are All Related</p>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal on scroll animation
+        const reveals = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const revealPoint = 150;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Nav background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 20px rgba(44, 24, 16, 0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

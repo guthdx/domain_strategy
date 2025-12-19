@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project H3LP | Technology for Good</title>
+    <meta name="description" content="Project H3LP harnesses technology to create positive change. We build digital solutions that empower communities, bridge gaps, and amplify impact for nonprofits worldwide.">
+    <meta name="keywords" content="technology for good, digital charity platform, tech nonprofit organization, social impact technology">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Project H3LP | Technology for Good">
+    <meta property="og:description" content="Harnessing technology to create positive change. Building digital solutions that empower communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://projecth3lp.com">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --deep-blue: #0f172a;
+            --slate: #334155;
+            --mist: #64748b;
+            --cloud: #e2e8f0;
+            --snow: #f8fafc;
+            --white: #ffffff;
+            --hope: #3b82f6;
+            --hope-light: #60a5fa;
+            --hope-dark: #2563eb;
+            --energy: #10b981;
+            --warmth: #f59e0b;
+            --compassion: #ec4899;
+            --glow-hope: rgba(59, 130, 246, 0.15);
+            --glow-energy: rgba(16, 185, 129, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--white);
+            color: var(--deep-blue);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.25rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--cloud);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--deep-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--hope);
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--slate);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--hope);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--hope);
+            color: white;
+            font-weight: 600;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--hope-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px var(--glow-hope);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 4rem;
+            position: relative;
+            background: linear-gradient(135deg, var(--snow) 0%, var(--white) 100%);
+            overflow: hidden;
+        }
+
+        /* Decorative elements */
+        .hero-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--glow-hope);
+            top: -100px;
+            right: -100px;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--glow-energy);
+            bottom: -50px;
+            left: -50px;
+            animation: float 20s ease-in-out infinite reverse;
+        }
+
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(245, 158, 11, 0.1);
+            top: 40%;
+            right: 20%;
+            animation: float 18s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(20px, -20px) scale(1.05); }
+            66% { transform: translate(-15px, 15px) scale(0.98); }
+        }
+
+        .hero-content {
+            max-width: 650px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--glow-energy);
+            color: var(--energy);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--hope) 0%, var(--compassion) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--slate);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: var(--hope);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--hope-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -10px var(--glow-hope);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--deep-blue);
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid var(--cloud);
+            border-radius: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--hope);
+            color: var(--hope);
+        }
+
+        /* Hero Image */
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
+            max-width: 550px;
+            animation: fadeIn 1s ease-out 0.5s backwards;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px -20px rgba(15, 23, 42, 0.15);
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--hope) 0%, var(--energy) 100%);
+            opacity: 0.1;
+        }
+
+        .placeholder-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--hope) 0%, var(--energy) 50%, var(--warmth) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+
+        /* Impact Stats */
+        .impact {
+            padding: 5rem 4rem;
+            background: var(--deep-blue);
+            color: white;
+        }
+
+        .impact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .impact-item {
+            text-align: center;
+        }
+
+        .impact-value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--hope-light), var(--energy));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            color: var(--cloud);
+            font-size: 0.95rem;
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 8rem 4rem;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--hope);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--deep-blue);
+        }
+
+        .mission-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mission-card {
+            background: var(--snow);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--cloud);
+            box-shadow: 0 20px 40px -20px rgba(15, 23, 42, 0.1);
+        }
+
+        .mission-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-card:nth-child(1) .mission-icon {
+            background: var(--glow-hope);
+            color: var(--hope);
+        }
+
+        .mission-card:nth-child(2) .mission-icon {
+            background: var(--glow-energy);
+            color: var(--energy);
+        }
+
+        .mission-card:nth-child(3) .mission-icon {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--warmth);
+        }
+
+        .mission-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .mission-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--deep-blue);
+        }
+
+        .mission-card p {
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 8rem 4rem;
+            background: var(--snow);
+        }
+
+        .programs-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .program-item {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--cloud);
+            transition: all 0.3s ease;
+        }
+
+        .program-item:hover {
+            border-color: var(--hope);
+            box-shadow: 0 10px 30px -15px var(--glow-hope);
+        }
+
+        .program-number {
+            width: 48px;
+            height: 48px;
+            background: var(--hope);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .program-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--deep-blue);
+        }
+
+        .program-content p {
+            color: var(--slate);
+        }
+
+        /* Get Involved */
+        .involved {
+            padding: 8rem 4rem;
+            background: var(--white);
+        }
+
+        .involved-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .involved-card {
+            background: linear-gradient(135deg, var(--hope) 0%, var(--hope-dark) 100%);
+            border-radius: 24px;
+            padding: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .involved-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .involved-card:nth-child(2) {
+            background: linear-gradient(135deg, var(--energy) 0%, #059669 100%);
+        }
+
+        .involved-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .involved-card p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .involved-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: var(--deep-blue);
+            font-weight: 600;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .involved-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 8rem 4rem;
+            background: var(--deep-blue);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            color: var(--cloud);
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 2.5rem;
+            background: var(--hope);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: var(--hope-light);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-blue);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 4rem;
+            color: var(--cloud);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .footer-logo span {
+            color: var(--hope-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--cloud);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--hope-light);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cloud);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--hope);
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--mist);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-image {
+                display: none;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero,
+            .mission,
+            .programs,
+            .involved,
+            .cta {
+                padding: 4rem 1.5rem;
+            }
+
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .involved-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .program-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">
+            <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16" stroke="#3b82f6" stroke-width="2"/>
+                <path d="M12 18 L18 12 L24 18 L18 24 Z" fill="#3b82f6"/>
+                <circle cx="18" cy="18" r="4" fill="#10b981"/>
+            </svg>
+            Project <span>H3LP</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#involved">Get Involved</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#" class="nav-cta">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+            Donate
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                Technology for Good
+            </div>
+
+            <h1>
+                Building <span class="highlight">Digital Solutions</span> That Change Lives
+            </h1>
+
+            <p class="hero-subtitle">
+                Project H3LP harnesses the power of technology to create positive change. We build tools that empower communities, bridge digital divides, and amplify impact for nonprofits worldwide.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">
+                    <span>Join Our Mission</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                    </svg>
+                </a>
+                <a href="#programs" class="btn-secondary">
+                    <span>See Our Work</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="hero-image-wrapper">
+                <div class="placeholder-image">
+                    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="impact">
+        <div class="impact-grid">
+            <div class="impact-item">
+                <div class="impact-value">50K+</div>
+                <div class="impact-label">People Impacted</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-value">120+</div>
+                <div class="impact-label">Partner Organizations</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-value">35</div>
+                <div class="impact-label">Countries Reached</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-value">$2M+</div>
+                <div class="impact-label">Resources Deployed</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <div class="section-header">
+            <p class="section-label">Our Mission</p>
+            <h2 class="section-title">Technology as a Force for Good</h2>
+        </div>
+
+        <div class="mission-grid">
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <h3>Digital Inclusion</h3>
+                <p>We believe everyone deserves access to technology. Our programs bridge the digital divide by providing tools, training, and connectivity to underserved communities.</p>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h3>Nonprofit Empowerment</h3>
+                <p>Small nonprofits often lack the technical resources they need. We build free tools and provide pro-bono tech support to amplify their impact.</p>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                </div>
+                <h3>Global Collaboration</h3>
+                <p>Technology knows no borders. We connect developers, designers, and organizations worldwide to solve local problems with global solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="section-header">
+            <p class="section-label">Our Programs</p>
+            <h2 class="section-title">How We Create Impact</h2>
+        </div>
+
+        <div class="programs-list">
+            <div class="program-item">
+                <div class="program-number">01</div>
+                <div class="program-content">
+                    <h3>Tech for Nonprofits</h3>
+                    <p>Custom software development, website creation, and digital infrastructure for organizations that can't afford traditional tech services.</p>
+                </div>
+            </div>
+
+            <div class="program-item">
+                <div class="program-number">02</div>
+                <div class="program-content">
+                    <h3>Digital Literacy Initiative</h3>
+                    <p>Training programs that teach essential digital skills to seniors, refugees, and underserved youth in communities around the world.</p>
+                </div>
+            </div>
+
+            <div class="program-item">
+                <div class="program-number">03</div>
+                <div class="program-content">
+                    <h3>Open Source for Good</h3>
+                    <p>Building and maintaining free, open-source tools that any nonprofit can use to manage donors, track impact, and communicate their mission.</p>
+                </div>
+            </div>
+
+            <div class="program-item">
+                <div class="program-number">04</div>
+                <div class="program-content">
+                    <h3>Emergency Response Tech</h3>
+                    <p>Rapid deployment of communication systems, coordination tools, and resource management platforms during disasters and humanitarian crises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved -->
+    <section class="involved" id="involved">
+        <div class="section-header">
+            <p class="section-label">Take Action</p>
+            <h2 class="section-title">Get Involved</h2>
+        </div>
+
+        <div class="involved-grid">
+            <div class="involved-card">
+                <h3>Volunteer Your Skills</h3>
+                <p>Developers, designers, and project managers - your expertise can change lives. Join our global network of tech volunteers.</p>
+                <a href="#" class="involved-btn">
+                    <span>Apply Now</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="involved-card">
+                <h3>Support Our Mission</h3>
+                <p>Your donation directly funds programs that bring technology to those who need it most. Every dollar makes a difference.</p>
+                <a href="#" class="involved-btn">
+                    <span>Donate Today</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="cta-content">
+            <h2>Ready to Make an Impact?</h2>
+            <p>Whether you're a nonprofit seeking tech support, a volunteer with skills to share, or a donor looking to create change - we want to hear from you.</p>
+            <a href="#" class="cta-btn">
+                <span>Get In Touch</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                Project <span>H3LP</span>
+            </div>
+
+            <ul class="footer-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Programs</a></li>
+                <li><a href="#">Impact</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="GitHub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Project H3LP. All rights reserved. | Technology for Good.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.mission-card, .program-item, .involved-card, .impact-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inertialism | The Art of Deliberate Stillness</title>
+    <meta name="description" content="Inertialism is a philosophy of intentional pause. In a world obsessed with motion, we find power in stillness. Discover the art of deliberate rest.">
+    <meta name="keywords" content="philosophy, mindfulness, stillness, intentional living, wellness movement">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Inertialism | The Art of Deliberate Stillness">
+    <meta property="og:description" content="In a world obsessed with motion, we find power in stillness.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inertialism.com">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --ink: #1a1a1a;
+            --stone: #4a4a4a;
+            --fog: #8a8a8a;
+            --mist: #c4c4c4;
+            --cloud: #e8e8e8;
+            --snow: #f5f5f5;
+            --white: #ffffff;
+            --sage: #7d9982;
+            --sage-light: #a5c4aa;
+            --sage-glow: rgba(125, 153, 130, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Karla', sans-serif;
+            background: var(--white);
+            color: var(--ink);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--ink);
+            text-decoration: none;
+            letter-spacing: 0.2em;
+            text-transform: lowercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--stone);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: lowercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10rem 2rem 6rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-symbol {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 3rem;
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--sage);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--stone);
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            animation: fadeIn 2s ease-out 0.5s backwards;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--ink);
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            text-transform: lowercase;
+            text-decoration: none;
+            border: 1px solid var(--mist);
+            transition: all 0.4s ease;
+            animation: fadeIn 2s ease-out 1s backwards;
+        }
+
+        .hero-cta:hover {
+            background: var(--ink);
+            color: var(--white);
+            border-color: var(--ink);
+        }
+
+        /* Scroll indicator */
+        .scroll-hint {
+            position: absolute;
+            bottom: 4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--fog);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: lowercase;
+        }
+
+        .scroll-hint::after {
+            content: '';
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--mist), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { height: 40px; opacity: 0.5; }
+            50% { height: 60px; opacity: 1; }
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            padding: 10rem 4rem;
+            background: var(--snow);
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            text-transform: lowercase;
+            color: var(--sage);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .philosophy-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            line-height: 1.8;
+            text-align: center;
+            color: var(--stone);
+        }
+
+        .philosophy-text em {
+            font-style: italic;
+            color: var(--ink);
+        }
+
+        /* Principles Section */
+        .principles {
+            padding: 10rem 4rem;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+        }
+
+        .principles-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+        }
+
+        .principle {
+            text-align: center;
+        }
+
+        .principle-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--cloud);
+            margin-bottom: 1.5rem;
+        }
+
+        .principle h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+
+        .principle p {
+            color: var(--stone);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 10rem 4rem;
+            background: var(--ink);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .quote-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 6rem;
+            color: var(--stone);
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            color: var(--cloud);
+        }
+
+        .quote-author {
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: lowercase;
+            color: var(--fog);
+        }
+
+        /* Practice Section */
+        .practice {
+            padding: 10rem 4rem;
+            background: var(--sage-glow);
+        }
+
+        .practice-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .practice-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--ink);
+        }
+
+        .practice-text p {
+            color: var(--stone);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+
+        .practice-list {
+            list-style: none;
+        }
+
+        .practice-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--mist);
+            color: var(--stone);
+        }
+
+        .practice-list li::before {
+            content: '—';
+            color: var(--sage);
+        }
+
+        .practice-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle-visual {
+            width: 300px;
+            height: 300px;
+            border: 1px solid var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .circle-visual::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid var(--sage);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .circle-visual::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid var(--sage);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .circle-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--sage);
+            border-radius: 50%;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 8rem 4rem;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+
+        .newsletter p {
+            color: var(--stone);
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--mist);
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: var(--snow);
+            transition: border-color 0.3s ease;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--sage);
+        }
+
+        .newsletter-form button {
+            padding: 1rem 2rem;
+            background: var(--ink);
+            color: var(--white);
+            border: none;
+            font-family: inherit;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: lowercase;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--sage);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--snow);
+            padding: 4rem;
+            border-top: 1px solid var(--cloud);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--ink);
+            letter-spacing: 0.2em;
+            text-transform: lowercase;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--stone);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: lowercase;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--sage);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-social a {
+            color: var(--fog);
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--sage);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--cloud);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--fog);
+            letter-spacing: 0.1em;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .principles-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .practice-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .practice-visual {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero,
+            .philosophy,
+            .principles,
+            .quote-section,
+            .practice,
+            .newsletter {
+                padding: 5rem 1.5rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .circle-visual {
+                width: 200px;
+                height: 200px;
+            }
+
+            .circle-visual::before {
+                width: 140px;
+                height: 140px;
+            }
+
+            .circle-visual::after {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">inertialism</a>
+        <ul class="nav-links">
+            <li><a href="#philosophy">philosophy</a></li>
+            <li><a href="#principles">principles</a></li>
+            <li><a href="#practice">practice</a></li>
+            <li><a href="#join">join</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <svg class="hero-symbol" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="30" r="28" stroke="#7d9982" stroke-width="1"/>
+                <circle cx="30" cy="30" r="4" fill="#7d9982"/>
+            </svg>
+
+            <h1>The art of <em>deliberate</em> stillness</h1>
+
+            <p class="hero-subtitle">
+                In a world obsessed with motion, we find power in pause. Inertialism is not about doing nothing — it's about doing nothing on purpose.
+            </p>
+
+            <a href="#philosophy" class="hero-cta">
+                <span>explore the philosophy</span>
+            </a>
+        </div>
+
+        <div class="scroll-hint">
+            <span>scroll</span>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy" id="philosophy">
+        <div class="section-content">
+            <p class="section-label">the philosophy</p>
+            <p class="philosophy-text">
+                We live in an age of perpetual motion. Always doing, always achieving, always <em>becoming</em>. But what if the most radical act is to simply <em>be</em>? Inertialism teaches that stillness is not the absence of action — it is action's most profound form.
+            </p>
+        </div>
+    </section>
+
+    <!-- Principles Section -->
+    <section class="principles" id="principles">
+        <div class="section-header">
+            <p class="section-label">the principles</p>
+            <h2 class="section-title">Three pillars of inertialism</h2>
+        </div>
+
+        <div class="principles-grid">
+            <div class="principle">
+                <div class="principle-number">01</div>
+                <h3>Intentional Pause</h3>
+                <p>Rest is not laziness. It is the deliberate choice to stop, to breathe, to allow space for what matters to emerge.</p>
+            </div>
+
+            <div class="principle">
+                <div class="principle-number">02</div>
+                <h3>Presence Over Progress</h3>
+                <p>We measure life not by milestones achieved but by moments fully inhabited. The journey is not toward a destination.</p>
+            </div>
+
+            <div class="principle">
+                <div class="principle-number">03</div>
+                <h3>Resistance to Rush</h3>
+                <p>We choose to move at the pace of wisdom, not urgency. Some things cannot be hurried — growth, healing, understanding.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="quote-content">
+            <div class="quote-mark">"</div>
+            <p class="quote-text">
+                Nature does not hurry, yet everything is accomplished. The river does not rush to reach the sea. The oak does not strain to touch the sky.
+            </p>
+            <p class="quote-author">— the inertial way</p>
+        </div>
+    </section>
+
+    <!-- Practice Section -->
+    <section class="practice" id="practice">
+        <div class="practice-content">
+            <div class="practice-text">
+                <h2>Living the practice</h2>
+                <p>Inertialism is not a philosophy to be understood — it is a practice to be lived. These are the daily rhythms that anchor us in stillness.</p>
+
+                <ul class="practice-list">
+                    <li>Begin each day with five minutes of nothing</li>
+                    <li>Create space between stimulus and response</li>
+                    <li>Honor the transitions between activities</li>
+                    <li>Practice single-tasking as a form of meditation</li>
+                    <li>End each day by simply sitting with what was</li>
+                </ul>
+            </div>
+
+            <div class="practice-visual">
+                <div class="circle-visual">
+                    <div class="circle-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="join">
+        <div class="newsletter-content">
+            <h2>Join the stillness</h2>
+            <p>Receive gentle reflections on living with intention. No urgency, no pressure — just space to think.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="your email" required>
+                <button type="submit">subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">inertialism</div>
+            <ul class="footer-links">
+                <li><a href="#">philosophy</a></li>
+                <li><a href="#">principles</a></li>
+                <li><a href="#">practice</a></li>
+                <li><a href="#">journal</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 inertialism. the art of deliberate stillness.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.principle, .practice-list li').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        // Newsletter form
+        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for joining the stillness.');
+        });
+    </script>
+</body>
+</html>
